@@ -25,7 +25,7 @@ public with sharing class AccessCheckController {
                 a.BillingStreet = 'Kavanagh Street'+i;
                 accList2.add(a);
             }
-            AccessCheckUtility.AccessCheckWrapper1 acw = AccessCheckUtility.checkAccess('Account', AccessType.CREATABLE, accList2);
+            AccessCheckUtility.AccessCheckWrapper acw = AccessCheckUtility.checkAccess('Account', AccessType.CREATABLE, accList2);
             if(acw.inAccessibleFields != null){
                 throw new AuraHandledException('User does not have access to fields ----- '+acw.inAccessibleFields);
             } else {
